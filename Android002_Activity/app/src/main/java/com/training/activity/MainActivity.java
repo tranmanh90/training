@@ -16,6 +16,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d(TAG, "onRestart: Event");
+    }
+
+    @Override
     protected void onStart(){
         super.onStart();
         Log.d(TAG, "onStart: Event");
