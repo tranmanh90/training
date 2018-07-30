@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /*
-* Khởi chạy một Activity bằng một ACtivity khác thông qua phương thức:
-* startActivity() => Đưa người dùng tới màn hình tiếp theo.
-* startActivityForResult() => Khởi chạy một Activity sau đó nhận kết quả trả về.
-*
-* */
+ * Khởi chạy một Activity bằng một ACtivity khác thông qua phương thức:
+ * startActivity() => Đưa người dùng tới màn hình tiếp theo.
+ * startActivityForResult() => Khởi chạy một Activity sau đó nhận kết quả trả về.
+ *
+ * */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mClickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,SecondActivity.class);
+                Intent i = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(i);
             }
         });

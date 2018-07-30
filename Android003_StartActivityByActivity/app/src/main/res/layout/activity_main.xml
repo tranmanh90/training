@@ -10,8 +10,8 @@
         android:id="@+id/text_view"
         android:layout_width="@dimen/hello_text_width"
         android:layout_height="@dimen/hello_text_height"
-        android:text="@string/hello_text"
         android:gravity="center"
+        android:text="@string/hello_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,6 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/text_view"/>
+        app:layout_constraintTop_toTopOf="@id/text_view" />
 
 </android.support.constraint.ConstraintLayout>
