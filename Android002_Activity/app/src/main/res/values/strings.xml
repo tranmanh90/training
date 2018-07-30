@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Android002_Activity</string>
+    <string name="app_name">Activity</string>
+    <string name="hello_world">Hello World !!!</string>
 </resources>
