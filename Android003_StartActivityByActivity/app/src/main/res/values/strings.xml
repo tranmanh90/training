@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">StartActivityByActivity</string>
-    <string name="hello_text">Hello World !!!</string>
+    <string name="hello_text">Start an Activity by another activity</string>
+    <string name="button_text">CLICK</string>
+    <string name="second_text">Second Activity</string>
 </resources>
