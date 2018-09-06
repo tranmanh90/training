@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Android006_HowToUseButton</string>
+    <string name="app_name">How To Use Button</string>
+    <string name="text_view_01">Clicked by Button 01</string>
+    <string name="text_view_02">Clicked by Button 02</string>
+    <string name="button_name_01">Show TextView 01</string>
+    <string name="button_name_02">Show TextView 02</string>
 </resources>
