@@ -1,9 +1,11 @@
-package com.travel.mvp;
+package com.travel.mvp.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.travel.mvp.R;
+
+public class TravelBookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
