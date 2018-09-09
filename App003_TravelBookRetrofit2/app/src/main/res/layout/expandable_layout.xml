@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.training.expandable.ExpandableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/expandableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:clickToToggle="true"
+    app:duration="250"
+    app:initialState="collapse">
+
+    <include
+        layout="@layout/content_expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</com.training.expandable.ExpandableLayout>
