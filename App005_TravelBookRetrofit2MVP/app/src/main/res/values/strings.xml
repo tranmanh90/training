@@ -2,4 +2,8 @@
     <string name="app_name">TravelBook</string>
     <string name="media_image_dimension_ratio">H,16:9</string>
     <string name="address_blur_multi_line">1.25</string>
+    <string name="expandable_header_text">Travelbooks</string>
+    <string name="sort_by_text">Sort By</string>
+    <string name="friends_button_text">Friends</string>
+    <string name="community_button_text">Community</string>
 </resources>

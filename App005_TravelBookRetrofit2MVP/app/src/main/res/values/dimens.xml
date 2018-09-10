@@ -28,4 +28,17 @@
     <dimen name="favorite_button_padding">12dp</dimen>
     <dimen name="comment_button_padding">12dp</dimen>
     <dimen name="share_button_padding">12dp</dimen>
+
+    <dimen name="header_expandable_text_size">22sp</dimen>
+
+    <dimen name="sort_by_layout_margin_start">28dp</dimen>
+    <dimen name="sort_by_layout_margin_top">10dp</dimen>
+    <dimen name="sort_by_layout_text_size">14sp</dimen>
+
+    <dimen name="constrain_layout_height">95dp</dimen>
+    <dimen name="constrain_layout_margin_top">10dp</dimen>
+
+    <dimen name="friends_button_layout_margin_left">28dp</dimen>
+    <dimen name="community_button_layout_margin_right">28dp</dimen>
+
 </resources>
