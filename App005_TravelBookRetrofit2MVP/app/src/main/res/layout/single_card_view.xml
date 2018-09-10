@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_view_margin"
+    app:cardCornerRadius="@dimen/card_view_corner">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar_image"
+            android:layout_width="@dimen/avatar_layout_width"
+            android:layout_height="@dimen/avatar_layout_height"
+            android:layout_marginStart="@dimen/avatar_layout_margin_start"
+            android:layout_marginTop="@dimen/avatar_layout_margin_top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/title_layout_margin_end"
+            android:layout_marginStart="@dimen/title_layout_margin_start"
+            android:layout_marginTop="@dimen/title_layout_margin_top"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/avatar_image"
+            app:layout_constraintTop_toTopOf="@+id/avatar_image" />
+
+        <TextView
+            android:id="@+id/mounth_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/mounth_year_layout_margin_right"
+            android:layout_marginTop="@dimen/mounth_year_layout_margin_top"
+            android:gravity="center"
+            android:textSize="@dimen/mounth_year_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/media_image"
+            android:layout_width="@dimen/media_image_layout_width"
+            android:layout_height="@dimen/media_image_layout_height"
+            android:layout_marginTop="@dimen/media_image_layout_margin_top"
+            android:scaleType="centerCrop"
+            android:src="@android:color/darker_gray"
+            app:layout_constraintDimensionRatio="@string/media_image_dimension_ratio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatar_image"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/address_blur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_blur_layout_margin_start"
+            android:layout_marginTop="@dimen/address_blur_layout_margin_top"
+            android:width="@dimen/address_blur_width"
+            android:height="@dimen/address_blur_height"
+            android:background="@drawable/address_blur"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.25"
+            app:layout_constraintStart_toStartOf="@id/media_image"
+            app:layout_constraintTop_toTopOf="@id/media_image" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/favorite_button_back_ground"
+            android:padding="@dimen/favorite_button_padding"
+            android:src="@drawable/heart_gray"
+            app:layout_constraintEnd_toStartOf="@+id/comment_button"
+            app:layout_constraintTop_toTopOf="@+id/comment_button" />
+
+        <ImageButton
+            android:id="@+id/comment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/comment_button_back_ground"
+            android:padding="@dimen/comment_button_padding"
+            android:src="@drawable/comment_oval_bubble"
+            app:layout_constraintEnd_toStartOf="@+id/share_button"
+            app:layout_constraintTop_toTopOf="@+id/share_button" />
+
+        <ImageButton
+            android:id="@+id/share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/share_button_back_ground"
+            android:padding="@dimen/share_button_padding"
+            android:src="@drawable/share_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/media_image" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
