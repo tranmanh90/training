@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TravelBook</string>
+    <string name="media_image_dimension_ratio">H,16:9</string>
+    <string name="address_blur_multi_line">1.25</string>
 </resources>
