@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_view_margin">8dp</dimen>
+    <dimen name="card_view_corner">10dp</dimen>
+
+    <dimen name="avatar_layout_width">48dp</dimen>
+    <dimen name="avatar_layout_height">48dp</dimen>
+    <dimen name="avatar_layout_margin_start">8dp</dimen>
+    <dimen name="avatar_layout_margin_top">8dp</dimen>
+
+    <dimen name="title_layout_margin_end">16dp</dimen>
+    <dimen name="title_layout_margin_start">12dp</dimen>
+    <dimen name="title_layout_margin_top">14dp</dimen>
+
+    <dimen name="mounth_year_layout_margin_right">17dp</dimen>
+    <dimen name="mounth_year_layout_margin_top">20dp</dimen>
+    <dimen name="mounth_year_text_size">10sp</dimen>
+
+    <dimen name="media_image_layout_width">0dp</dimen>
+    <dimen name="media_image_layout_height">0dp</dimen>
+    <dimen name="media_image_layout_margin_top">8dp</dimen>
+
+    <dimen name="address_blur_layout_margin_start">10dp</dimen>
+    <dimen name="address_blur_layout_margin_top">10dp</dimen>
+    <dimen name="address_blur_width">73dp</dimen>
+    <dimen name="address_blur_height">15dp</dimen>
+
+    <dimen name="favorite_button_padding">12dp</dimen>
+    <dimen name="comment_button_padding">12dp</dimen>
+    <dimen name="share_button_padding">12dp</dimen>
+</resources>
