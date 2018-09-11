@@ -6,4 +6,6 @@
     <string name="sort_by_text">Sort By</string>
     <string name="friends_button_text">Friends</string>
     <string name="community_button_text">Community</string>
+    <string name="friends_scope">friends</string>
+    <string name="community_scope">community</string>
 </resources>

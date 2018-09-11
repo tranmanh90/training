@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="alpha_purple">255</integer>
+    <integer name="red_purple">0</integer>
+    <integer name="green_purple">0</integer>
+    <integer name="blue_purple">0</integer>
+
+    <integer name="alpha_black">255</integer>
+    <integer name="red_black">236</integer>
+    <integer name="green_black">81</integer>
+    <integer name="blue_black">105</integer>
+
+    <array name="button_purple_color">
+        <item>@integer/alpha_purple</item>
+        <item>@integer/red_purple</item>
+        <item>@integer/green_purple</item>
+        <item>@integer/blue_purple</item>
+    </array>
+
+    <array name="button_black_color">
+        <item>@integer/alpha_black</item>
+        <item>@integer/red_black</item>
+        <item>@integer/green_black</item>
+        <item>@integer/blue_black</item>
+    </array>
+
+</resources>
