@@ -12,6 +12,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.travel.mvp.ExpandableLayout;
@@ -28,15 +29,20 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     private ProgressBar mProgressBar;
     private RecyclerView mRecyclerView;
     private ITravelBookPresenter mTravelBookPresenter;
-    private ExpandableLayout expandableLayout;
-    private SwipeRefreshLayout swipeRefreshLayout;
-    private Button friend;
-    private Button community;
+    private ExpandableLayout mExpandableLayout;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private Button mFriendButton;
+    private Button mCommunityButton;
+    private TextView aboveLine;
+    private TextView belowLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.travel_book_main);
+
+        aboveLine = findViewById(R.id.above);
+        belowLine = findViewById(R.id.below);
 
         initProgressBar();
         initFriendsButton();
@@ -47,7 +53,7 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
         initRecycleView();
 
         mTravelBookPresenter = new TravelBookPresenter(this, new GetDataPresenter());
-        mTravelBookPresenter.requestData(mTravelBookPresenter.loadAppSettings());
+        mTravelBookPresenter.onRefresh(mTravelBookPresenter.loadAppSettings());
     }
 
     @Override
@@ -64,7 +70,7 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     @Override
     public void hideProgress() {
         mProgressBar.setVisibility(View.INVISIBLE);
-        swipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
@@ -87,7 +93,7 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     }
 
     private void initProgressBar() {
-        mProgressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);
+        mProgressBar = new ProgressBar(this, null, android.R.attr.progressBarStyle);
         mProgressBar.setIndeterminate(true);
 
         RelativeLayout relativeLayout = new RelativeLayout(this);
@@ -101,18 +107,18 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
 
     private void configExpandableLayout() {
         View switcher = findViewById(R.id.switcher);
-        expandableLayout = findViewById(R.id.expandable_layout);
-        expandableLayout.setSwitcher(switcher);
-        expandableLayout.setExpandInterpolator(new AccelerateDecelerateInterpolator());
-        expandableLayout.setCollapseInterpolator(new AccelerateDecelerateInterpolator());
-        expandableLayout.setExpandDuration(250);
-        expandableLayout.setCollapseDuration(400);
+        mExpandableLayout = findViewById(R.id.expandable_layout);
+        mExpandableLayout.setSwitcher(switcher);
+        mExpandableLayout.setExpandInterpolator(new AccelerateDecelerateInterpolator());
+        mExpandableLayout.setCollapseInterpolator(new AccelerateDecelerateInterpolator());
+        mExpandableLayout.setExpandDuration(250);
+        mExpandableLayout.setCollapseDuration(400);
     }
 
     private void initSwipeRefreshLayout() {
-        swipeRefreshLayout = findViewById(R.id.swipeToRefresh);
-        swipeRefreshLayout.setColorSchemeColors(Color.argb(255, 236, 81, 105));
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        mSwipeRefreshLayout = findViewById(R.id.swipeToRefresh);
+        mSwipeRefreshLayout.setColorSchemeColors(Color.argb(255, 236, 81, 105));
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 mTravelBookPresenter.requestData(mTravelBookPresenter.loadAppSettings());
@@ -121,40 +127,43 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     }
 
     protected void onExpandable(View view) {
-        expandableLayout.toggle();
+        aboveLine.setVisibility(View.INVISIBLE);
+        belowLine.setVisibility(View.VISIBLE);
+        mExpandableLayout.toggle();
     }
 
     private void initFriendsButton() {
-        friend = findViewById(R.id.friends_button);
-        friend.setOnClickListener(new View.OnClickListener() {
+        mFriendButton = findViewById(R.id.friends_button);
+        mFriendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                community.setTextColor(Color.argb(255, 0, 0, 0));
-                friend.setTextColor(Color.argb(255, 236, 81, 105));
+                mCommunityButton.setTextColor(Color.argb(255, 0, 0, 0));
+                mFriendButton.setTextColor(Color.argb(255, 236, 81, 105));
                 mTravelBookPresenter.onRefresh(getApplicationContext().getString(R.string.friends_scope));
                 mTravelBookPresenter.storeAppSettings(getApplicationContext().getString(R.string.friends_scope));
-                expandableLayout.toggle();
+                mExpandableLayout.toggle();
             }
         });
     }
 
     private void initCommunityButton() {
-        community = findViewById(R.id.community_button);
-        community.setOnClickListener(new View.OnClickListener() {
+        mCommunityButton = findViewById(R.id.community_button);
+        mCommunityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                friend.setTextColor(Color.argb(255, 0, 0, 0));
-                community.setTextColor(Color.argb(255, 236, 81, 105));
+
+                mFriendButton.setTextColor(Color.argb(255, 0, 0, 0));
+                mCommunityButton.setTextColor(Color.argb(255, 236, 81, 105));
                 mTravelBookPresenter.onRefresh(getApplicationContext().getString(R.string.community_scope));
                 mTravelBookPresenter.storeAppSettings(getApplicationContext().getString(R.string.community_scope));
-                expandableLayout.toggle();
+                mExpandableLayout.toggle();
             }
         });
     }
 
     @Override
     public void initUI(Integer... params) {
-        friend.setTextColor(Color.argb(params[0], params[1], params[2], params[3]));
-        community.setTextColor(Color.argb(params[4], params[5], params[6], params[7]));
+        mFriendButton.setTextColor(Color.argb(params[0], params[1], params[2], params[3]));
+        mCommunityButton.setTextColor(Color.argb(params[4], params[5], params[6], params[7]));
     }
 }
