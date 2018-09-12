@@ -1,6 +1,5 @@
 package com.travel.mvp.views;
 
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 import com.travel.mvp.ExpandableLayout;
 import com.travel.mvp.R;
 import com.travel.mvp.adapters.TravelBookAdapter;
-import com.travel.mvp.constants.Constants;
 import com.travel.mvp.models.TravelModel;
 import com.travel.mvp.presenters.GetDataPresenter;
 import com.travel.mvp.presenters.ITravelBookPresenter;
@@ -66,6 +64,7 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     @Override
     public void hideProgress() {
         mProgressBar.setVisibility(View.INVISIBLE);
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
@@ -113,6 +112,12 @@ public class TravelBookActivity extends AppCompatActivity implements ITravelBook
     private void initSwipeRefreshLayout() {
         swipeRefreshLayout = findViewById(R.id.swipeToRefresh);
         swipeRefreshLayout.setColorSchemeColors(Color.argb(255, 236, 81, 105));
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mTravelBookPresenter.requestData(mTravelBookPresenter.loadAppSettings());
+            }
+        });
     }
 
     protected void onExpandable(View view) {
