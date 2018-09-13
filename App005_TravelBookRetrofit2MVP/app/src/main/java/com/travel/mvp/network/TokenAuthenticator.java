@@ -60,11 +60,11 @@ public class TokenAuthenticator implements Authenticator {
         urlConnection.setRequestMethod("POST");
         urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         urlConnection.setUseCaches(false);
-        String urlParameters = "client_id=" + clientId +
-                "&client_secret=" + clientSecret +
-                "&grant_type=" + grantType +
-                "&email=" + email +
-                "&password=" + password;
+        String urlParameters =  "client_id="        + clientId +
+                                "&client_secret="   + clientSecret +
+                                "&grant_type="      + grantType +
+                                "&email="           + email +
+                                "&password="        + password;
 
         urlConnection.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
